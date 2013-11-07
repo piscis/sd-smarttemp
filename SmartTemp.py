@@ -15,7 +15,7 @@ class SmartTemp:
         self.pcidevices = ""
         self.diskbypathdata = ""
         self.cfgField = '^SmartTemp'
-        self.baseCMD = 'smartctl -a -d ata'
+        self.baseCMD = 'sudo /usr/sbin/smartctl -a -d ata'
         self.cmdStack = []
 
     def num (self, s):

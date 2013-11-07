@@ -22,6 +22,12 @@ A server density plugin to check some S.M.A.R.T. information's for your hard dri
 
 1. First install ``smartmontools`` for your operating system on UBUNTU execute: ``apt-get install smartmontools``
 2. Copy the plugin ***(SmartTemp.py)*** to your SD agent plugin directory
+3. Give the ``sd-agent`` user right to execute smartctl. Add the following line to your **sudoes** file ``(default: /etc/sudoes)``
+```
+  # SmartTemp plugin
+  sd-agent ALL=(ALL) NOPASSWD:/usr/sbin/smartctl
+```
+
 3. See additional config steps to learn how to configure the plugin for certain hard drives only
 4. Restart the Server density plugin
 
@@ -35,12 +41,12 @@ you can provide custom configurations, SmartTemp will then only monitor the devi
 ```
   # Check 1
   [SmartTemp sda]
-  smartcmd = smartctl -a -d ata /dev/sda
+  smartcmd = sudo /usr/sbin/smartctl -a -d ata /dev/sda
   name = sda
 
   # Check 2
   [SmartTemp custom]
-  smartcmd = smartctl -a -d ata /dev/sdb
+  smartcmd = sudo /usr/sbin/smartctl -a -d ata /dev/sdb
   name = {your custom identifier}
 ```
 
@@ -61,12 +67,12 @@ The following section describes how to monitor a mega raid array with ``smartctl
 ```
   # Check 1
   [SmartTemp raid_0]
-  smartcmd = smartctl -d sat+megaraid,4 -a /dev/sda
+  smartcmd = sudo /usr/sbin/smartctl -d sat+megaraid,4 -a /dev/sda
   name = raid_0
 
   # Check 2
   [SmartTemp raid_1]
-  smartcmd = smartctl -d sat+megaraid,[DEVICE ID] -a /dev/sda
+  smartcmd = sudo /usr/sbin/smartctl -d sat+megaraid,[DEVICE ID] -a /dev/sda
   name = [your custom identifier]
 ```
 
