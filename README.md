@@ -20,13 +20,13 @@ A server density plugin to check some S.M.A.R.T. informations for your harddrive
 
 ### Configure the plugin
 
-1. Install smartmontools for your operating system on UBUNTU execute: `` apt-get install smartmontools ``
+1. First install ``smartmontools`` for your operating system on UBUNTU execute: ``apt-get install smartmontools``
 2. Copy the plugin ***(SmartTemp.py)*** to your SD agent plugin directory
-3. See additional config steps to learn how to configure the plugin for sertain harddrives only
+3. See additional config steps to learn how to configure the plugin for certain hard drives only
 4. Restart the Server density plugin
 
 ### Additional configuration steps (optional)
-If you don't specify a custom command SmartTemp will try to find all of you harddrives and extract S.M.A.R.T. informations. If you provide a configuration SmartTemp will only monitor the devices you configured in the server density agent file.
+If you don't specify a custom command SmartTemp will try to find all of you hard drives and extract S.M.A.R.T. information's. If you provide a configuration SmartTemp will only monitor the devices you configured in the server density agent file.
 
 #### Use a custom smartctl command
 1. Open your server density client config file (default: /etc/sd-agent/config.cfg)
@@ -47,7 +47,7 @@ If you don't specify a custom command SmartTemp will try to find all of you hard
 
 #### Example monitor a MegaRaid-Array
 
-The following section descripts how to monitor a mega raid array with smartctl and SmartTemp. 
+The following section describes how to monitor a mega raid array with smartctl and SmartTemp.
 
 1. Extract you're mega raid drive ids with megacli (have to install this)
 ```
@@ -78,6 +78,6 @@ The following section descripts how to monitor a mega raid array with smartctl a
 This plugin makes heavy use of [http://louwrentius.com/](Louwrentius) excellent ** showsmart ** shell script.  
 **Source:** http://louwrentius.com/static/files/showsmart
 
-Also and because I'm a python noob (hours<20h) I think this script could be inproved and I would apprijiate any contributions to it. Fork away!
+Also and because I'm a python noob (hours<20h) I think this script could be improved and I would appreciate any contributions to it. Fork away!
 
 ### [LICENSE](LICENSE MIT)
