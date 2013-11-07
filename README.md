@@ -101,4 +101,4 @@ This plugin makes heavy use of [Louwrentius](http://louwrentius.com/) excellent 
 Also and because I'm a python noob (hours<20h) I think this script could be improved and I would appreciate any contributions to it. Fork away!
 Tested under Ubuntu 12.10
 
-### [LICENSE](LICENSE MIT)
+### [LICENSE MIT](LICENSE)
