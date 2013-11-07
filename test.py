@@ -1,4 +1,4 @@
-# SmartCheck tester
+# SmartTemp tester
 # https://github.com/piscis/sd-smarttemp
 
 # This is a small test suite to test the smarttemp plugin manually
