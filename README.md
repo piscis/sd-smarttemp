@@ -95,7 +95,7 @@ The following section describes how to monitor a mega raid array with ``smartctl
 ```
 
 ### Acknowledgements
-This plugin makes heavy use of [Louwrentius](http://louwrentius.com/) excellent ** showsmart ** shell script.
+This plugin makes heavy use of [Louwrentius](http://louwrentius.com/) excellent ** showsmart ** shell script.  
 **Source:** http://louwrentius.com/static/files/showsmart
 
 Also and because I'm a python noob (hours<20h) I think this script could be improved and I would appreciate any contributions to it. Fork away!
