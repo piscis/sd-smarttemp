@@ -215,10 +215,11 @@ class SmartTemp:
 
             if 'device' in data: 
                 deviceKey = data['device']
-                del data['device']
 
                 for idx, val in enumerate(data):
-                    records[deviceKey+"_"+keys[idx]] = data[val]
+
+                    if val != "device":
+                        records[deviceKey+" "+val] = data[val]
 
 
         if self.smarterror:
