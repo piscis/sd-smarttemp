@@ -5,11 +5,11 @@ A server density plugin to check some S.M.A.R.T. informations for your harddrive
 
 ### Sample information
 ```
------------------------------------------------------------
-| DEVICE | TEMP | POWERON | REALLOC. | PENDING | CRC ERR. |
------------------------------------------------------------
-|    sda |   56 |   14641 |        0 |       0 |        0 |
------------------------------------------------------------
+  -----------------------------------------------------------
+  | DEVICE | TEMP | POWERON | REALLOC. | PENDING | CRC ERR. |
+  -----------------------------------------------------------
+  |    sda |   56 |   14641 |        0 |       0 |        0 |
+  -----------------------------------------------------------
 ```
 
 ### Configure the plugin
@@ -26,15 +26,15 @@ If you don't specify a custom command SmartTemp will try to find all of you hard
 1. Open your server density client config file (default: /etc/sd-agent/config.cfg)
 2. Add the configuration section to the client the looks like this:
 ```
-# Check 1
-[SmartTemp sda]
-smartcmd = smartctl -a -d ata /dev/sda
-name = sda
+  # Check 1
+  [SmartTemp sda]
+  smartcmd = smartctl -a -d ata /dev/sda
+  name = sda
 
-# Check 2
-[SmartTemp custom]
-smartcmd = smartctl -a -d ata /dev/sdb
-name = {your custom identifier}
+  # Check 2
+  [SmartTemp custom]
+  smartcmd = smartctl -a -d ata /dev/sdb
+  name = {your custom identifier}
 ```
 **note:** Every SmartTemp configuration must consist of a smartcmd and name key. The smartcmd is the actual overwrite of the default command and the name key is the attribute that the check that will appear in the server density graph.
 
@@ -44,33 +44,33 @@ The following section descripts how to monitor a mega raid array with smartctl a
 
 1. Extract you're mega raid drive ids with megacli (have to install this)
 ```
-# megacli -pdlist -a0| grep 'Device Id'
-Device Id: 4
-Device Id: 5
+  # megacli -pdlist -a0| grep "Device Id"
+  Device Id: 4
+  Device Id: 5
 ```
 
 2. Add the configuration section to the client the looks like this:
 ```
-# Check 1
-[SmartTemp raid_0]
-smartcmd = smartctl -d sat+megaraid,4 -a /dev/sda
-name = raid_0
+  # Check 1
+  [SmartTemp raid_0]
+  smartcmd = smartctl -d sat+megaraid,4 -a /dev/sda
+  name = raid_0
 
-# Check 2
-[SmartTemp raid_1]
-smartcmd = smartctl -d sat+megaraid,[DEVICE ID] -a /dev/sda
-name = [your custom identifier]
+  # Check 2
+  [SmartTemp raid_1]
+  smartcmd = smartctl -d sat+megaraid,[DEVICE ID] -a /dev/sda
+  name = [your custom identifier]
 ```
 
 3. You can test this by copying test.py to your agents plugin dir and execute
 ```
-python test.py
+  python test.py
 ```
 
 ### Acknowledgements
-This Plugin makes have use of the Louwrentius excellent showsmart shell script. http://louwrentius.com/
-Source: http://louwrentius.com/static/files/showsmart
+This plugin makes heavy use of [http://louwrentius.com/](Louwrentius) excellent ** showsmart ** shell script.  
+**Source:** http://louwrentius.com/static/files/showsmart
 
 Also and because I'm a python noob (hours<20h) I think this script could be inproved and I would apprijiate any contributions to it. Fork away!
 
-### (LICENSE)[LICENSE]
+### [LICENSE](LICENSE MIT)
