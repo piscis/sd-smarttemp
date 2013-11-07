@@ -26,10 +26,11 @@ A server density plugin to check some S.M.A.R.T. informations for your harddrive
 4. Restart the Server density plugin
 
 ### Additional configuration steps (optional)
-If you don't specify a custom command SmartTemp will try to find all of you hard drives and extract S.M.A.R.T. information's. If you provide a configuration SmartTemp will only monitor the devices you configured in the server density agent file.
+The standard behavior of SmartTemp is to find all of you hard drives and extract S.M.A.R.T. information's. As an alternative to the standard behavior
+you can provide custom configurations, SmartTemp will then only monitor the devices you configured in the server density agent configuration file.
 
 #### Use a custom smartctl command
-1. Open your server density client config file (default: /etc/sd-agent/config.cfg)
+1. Open your server density client config file ``(default: /etc/sd-agent/config.cfg)``
 2. Add the configuration section to the client the looks like this:
 ```
   # Check 1
@@ -49,14 +50,14 @@ If you don't specify a custom command SmartTemp will try to find all of you hard
 
 The following section describes how to monitor a mega raid array with smartctl and SmartTemp.
 
-1. Extract you're mega raid drive ids with megacli (have to install this)
+1. Extract you're mega raid drive id's with megacli (you have to install this)
 ```
   # megacli -pdlist -a0| grep "Device Id"
   Device Id: 4
   Device Id: 5
 ```
-
-2. Add the configuration section to the client the looks like this:
+2. Open your server density client config file ``(default: /etc/sd-agent/config.cfg)``
+3. Add the configuration section to the client the looks like this:
 ```
   # Check 1
   [SmartTemp raid_0]
@@ -69,7 +70,7 @@ The following section describes how to monitor a mega raid array with smartctl a
   name = [your custom identifier]
 ```
 
-3. You can test this by copying test.py to your agents plugin dir and execute
+4. You can test this by copying test.py to your agents plugin dir and execute it with:
 ```
   python test.py
 ```
