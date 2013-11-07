@@ -210,14 +210,16 @@ class SmartTemp:
             data = {}
 
             for idx,val in enumerate(row):
-
                 val = self.num(val)
                 data[keys[idx]]=val
 
             if 'device' in data: 
-                key = data['device']
+                deviceKey = data['device']
                 del data['device']
-                records[key] = data
+
+                for idx, val in enumerate(data):
+                    records[deviceKey+"_"+keys[idx]] = data[val]
+
 
         if self.smarterror:
             print "ERROR: smart not installed or not working!"

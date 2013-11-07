@@ -4,6 +4,7 @@ sd-smarttemp
 A server density plugin to check some S.M.A.R.T. information's for your hard drives with ``smartmontools``.
 
 ### Sample information
+
 ```
   -----------------------------------------------------------
   | DEVICE | TEMP | POWERON | REALLOC. | PENDING | CRC ERR. |
@@ -17,6 +18,18 @@ A server density plugin to check some S.M.A.R.T. information's for your hard dri
 * **REALLOC.** = Reallocated Sector Count
 * **PENDING**  = Current Pending Sector
 * **CRC ERR.** = UDMA CRC ERROR
+
+# Sample information (JSON)
+This is sample information send to the sd-agent
+```
+  {
+    'sda_poweron': 0, 
+    'sda_pending': 0, 
+    'sda_temp': 0, 
+    'sda_device': 56, 
+    'sda_realloc': 14643
+  }
+```
 
 ### Plugin setup
 
