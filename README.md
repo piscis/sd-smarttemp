@@ -18,7 +18,7 @@ A server density plugin to check some S.M.A.R.T. information's for your hard dri
 * **PENDING**  = Current Pending Sector
 * **CRC ERR.** = UDMA CRC ERROR
 
-### Configure the plugin
+### Plugin setup
 
 1. First install ``smartmontools`` for your operating system on UBUNTU execute: ``apt-get install smartmontools``
 2. Copy the plugin ***(SmartTemp.py)*** to your SD agent plugin directory
