@@ -42,7 +42,8 @@ If you don't specify a custom command SmartTemp will try to find all of you hard
   smartcmd = smartctl -a -d ata /dev/sdb
   name = {your custom identifier}
 ```
-**note:** Every SmartTemp configuration must consist of a smartcmd and name key. The smartcmd is the actual overwrite of the default command and the name key is the attribute that the check that will appear in the server density graph.
+
+**Note:** Every SmartTemp configuration must consist of a smartcmd and name key. The smartcmd is the actual overwrite of the default command and the name key is the attribute that the check that will appear in the server density graph.
 
 #### Example monitor a MegaRaid-Array
 
