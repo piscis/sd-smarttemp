@@ -11,6 +11,12 @@ A server density plugin to check some S.M.A.R.T. informations for your harddrive
   |    sda |   56 |   14641 |        0 |       0 |        0 |
   -----------------------------------------------------------
 ```
+* DEVICE = Device identifier or name key 
+* TEMP = Actual temperature
+* POWERON = Amount of minutes running since first power on
+* REALLOC. = Reallocated Sector Count
+* PENDING = Current Pending Sector
+* CRC ERR. = UDMA CRC ERROR
 
 ### Configure the plugin
 
